@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image_Gayap</title>
+</head>
+<body>
+    
+    <h2>Click On Images</h2>
+
+    <ul id="ul">
+        <li><img id="dog" style="width: 200px ; height:200px" src="https://images.pexels.com/photos/895259/pexels-photo-895259.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+        <li><img id="women" style="width: 200px ; height:200px"  src="https://images.pexels.com/photos/1239937/pexels-photo-1239937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""></li>
+        <li><img id="cat" style="width: 200px ; height:200px"  src="https://images.pexels.com/photos/1317844/pexels-photo-1317844.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+        <li><img id="baby" style="width: 200px ; height:200px"  src="https://images.pexels.com/photos/826734/pexels-photo-826734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""></li>
+        <li><a href="https://www.pexels.com/@3motional-studio-407102/">gate photos</a></li>
+    </ul>
+
+
+    <script>
+     
+     const ul=document.getElementById('ul');
+    //  console.log(ul.childNodes);
+   // console.log(e.target.parentNode)---->li;
+//    console.log(e.target.tagName)---->tag name selection
+
+    ul.addEventListener('click',function(e){
+      
+        if(e.target.tagName==='IMG'){
+            const removeIMG=e.target.parentNode;
+            console.log(`removed image is `+ e.target.id)
+            removeIMG.remove();
+            
+        }if(e.target.tagName==='A'){
+           e.preventDefault(); //stop from redirecting
+        }
+       
+     
+    },false)//event prapogation
+
+    </script>
+
+</body>
+
+</html>
